@@ -256,6 +256,7 @@ public class Main extends JFrame {
                 // 点击几次，这里是双击事件
                 int row = movieJTable.getSelectedRow();
                 Movie movie = Movies.get(row);
+                System.out.println(row);
                 if (e.getClickCount() == 1) {
                     nameButton.setText("");
                     nameButton.setText(movie.getName());
@@ -265,7 +266,6 @@ public class Main extends JFrame {
                     ImageIcon movieIcon = new ImageIcon("images//movie//" + movie.getName() + ".jpg");
                     movieJLabel.setIcon(movieIcon);
                     url = movie.getDouban_url();
-
                 } else {
                     // 双击找到文件位置进行播放
                     File dir = new File(movie.getAddress()); // 创建文件对象
